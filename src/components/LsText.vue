@@ -1,20 +1,26 @@
 <template>
-    <p :id="id" class="lsq-element" :style="style">
+    <component :is="tag" :id="id" class="lsq-element" :style="style">
         <span v-html="contentValue" v-if="contentValue" />
         <slot v-else />
-    </p>
+    </component>
 </template>
 
 <script>
+import element from '../mixins/element';
+
 export default {
     name: 'LsText',
 
-    inject: ['wedgeData'],
+    mixins: [element],
 
     props: {
         id: {
             type: String,
             required: true,
+        },
+        tag: {
+            type: String,
+            default: 'p',
         },
         content: {
             type: String,
@@ -76,22 +82,6 @@ export default {
             }
 
             return style;
-        },
-    },
-
-    methods: {
-        elementValue(key) {
-            if (
-                this.wedgeData.elements[this.id] &&
-                this.wedgeData.elements[this.id][key]
-            ) {
-                return this.wedgeData.elements[this.id][key];
-            }
-            if (this[key]) {
-                return this[key];
-            }
-
-            return null;
         },
     },
 };

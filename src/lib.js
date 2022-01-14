@@ -1,7 +1,7 @@
 const LsElements = {
     install(Vue) {
         const requireWedgeComponent = require.context(
-            './',
+            './components',
             true, // include subdirectories
             /\.vue$/
         );
