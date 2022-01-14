@@ -7,12 +7,14 @@
 
 <script>
 export default {
+    name: 'LsText',
+
     inject: ['wedgeData'],
 
     props: {
         id: {
             type: String,
-            required: true
+            required: true,
         },
         content: {
             type: String,
@@ -21,8 +23,8 @@ export default {
                 type: 'textarea',
                 label: 'Content',
                 placeholder: 'Enter content here...',
-                validate: 'string'
-            }
+                validate: 'string',
+            },
         },
         fontSize: {
             type: String,
@@ -31,8 +33,8 @@ export default {
                 type: 'text',
                 label: 'Font Size',
                 placeholder: '16px',
-                validate: 'string'
-            }
+                validate: 'string',
+            },
         },
         fontWeight: {
             type: String,
@@ -41,8 +43,8 @@ export default {
                 type: 'text',
                 label: 'Font Weight',
                 placeholder: 'bold',
-                validate: 'string'
-            }
+                validate: 'string',
+            },
         },
         lineHeight: {
             type: String,
@@ -51,8 +53,8 @@ export default {
                 type: 'text',
                 label: 'Line Height',
                 placeholder: '1.5em',
-                validate: 'string'
-            }
+                validate: 'string',
+            },
         },
     },
 
@@ -79,7 +81,10 @@ export default {
 
     methods: {
         elementValue(key) {
-            if (this.wedgeData.elements[this.id] && this.wedgeData.elements[this.id][key]) {
+            if (
+                this.wedgeData.elements[this.id] &&
+                this.wedgeData.elements[this.id][key]
+            ) {
                 return this.wedgeData.elements[this.id][key];
             }
             if (this[key]) {
@@ -87,7 +92,7 @@ export default {
             }
 
             return null;
-        }
-    }
-}
+        },
+    },
+};
 </script>
