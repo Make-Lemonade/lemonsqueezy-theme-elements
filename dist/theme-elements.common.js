@@ -388,6 +388,80 @@ module.exports = !STRICT_METHOD ? function forEach(callbackfn /* , thisArg */) {
 
 /***/ }),
 
+/***/ "199d":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+// ESM COMPAT FLAG
+__webpack_require__.r(__webpack_exports__);
+
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"75050d79-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--1-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/LsImage.vue?vue&type=template&id=321323d3&
+var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return (_vm.srcValue)?_c('img',{staticClass:"lsq-element",attrs:{"id":_vm.id,"src":_vm.srcValue}}):_vm._e()}
+var staticRenderFns = []
+
+
+// CONCATENATED MODULE: ./src/components/LsImage.vue?vue&type=template&id=321323d3&
+
+// EXTERNAL MODULE: ./src/mixins/element.js
+var mixins_element = __webpack_require__("2472");
+
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--13-0!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--1-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/LsImage.vue?vue&type=script&lang=js&
+//
+//
+//
+//
+
+/* harmony default export */ var LsImagevue_type_script_lang_js_ = ({
+  name: 'LsImage',
+  mixins: [mixins_element["a" /* default */]],
+  props: {
+    id: {
+      type: String,
+      required: true
+    },
+    src: {
+      type: String,
+      "default": '',
+      input: {
+        type: 'file',
+        label: 'Image'
+      }
+    }
+  },
+  computed: {
+    srcValue: function srcValue() {
+      return this.elementValue('src');
+    }
+  }
+});
+// CONCATENATED MODULE: ./src/components/LsImage.vue?vue&type=script&lang=js&
+ /* harmony default export */ var components_LsImagevue_type_script_lang_js_ = (LsImagevue_type_script_lang_js_); 
+// EXTERNAL MODULE: ./node_modules/vue-loader/lib/runtime/componentNormalizer.js
+var componentNormalizer = __webpack_require__("2877");
+
+// CONCATENATED MODULE: ./src/components/LsImage.vue
+
+
+
+
+
+/* normalize component */
+
+var component = Object(componentNormalizer["a" /* default */])(
+  components_LsImagevue_type_script_lang_js_,
+  render,
+  staticRenderFns,
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* harmony default export */ var LsImage = __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
 /***/ "1a2d":
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -531,6 +605,136 @@ exports.f = Object.getOwnPropertyNames || function getOwnPropertyNames(O) {
 
 /***/ }),
 
+/***/ "2472":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony default export */ __webpack_exports__["a"] = ({
+  inject: ['wedgeData'],
+  methods: {
+    elementValue: function elementValue(key) {
+      if (this.wedgeData.elements[this.id] && this.wedgeData.elements[this.id][key]) {
+        return this.wedgeData.elements[this.id][key];
+      }
+
+      if (this[key]) {
+        return this[key];
+      }
+
+      return null;
+    }
+  }
+});
+
+/***/ }),
+
+/***/ "2877":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return normalizeComponent; });
+/* globals __VUE_SSR_CONTEXT__ */
+
+// IMPORTANT: Do NOT use ES2015 features in this file (except for modules).
+// This module is a runtime utility for cleaner component module output and will
+// be included in the final webpack user bundle.
+
+function normalizeComponent (
+  scriptExports,
+  render,
+  staticRenderFns,
+  functionalTemplate,
+  injectStyles,
+  scopeId,
+  moduleIdentifier, /* server only */
+  shadowMode /* vue-cli only */
+) {
+  // Vue.extend constructor export interop
+  var options = typeof scriptExports === 'function'
+    ? scriptExports.options
+    : scriptExports
+
+  // render functions
+  if (render) {
+    options.render = render
+    options.staticRenderFns = staticRenderFns
+    options._compiled = true
+  }
+
+  // functional template
+  if (functionalTemplate) {
+    options.functional = true
+  }
+
+  // scopedId
+  if (scopeId) {
+    options._scopeId = 'data-v-' + scopeId
+  }
+
+  var hook
+  if (moduleIdentifier) { // server build
+    hook = function (context) {
+      // 2.3 injection
+      context =
+        context || // cached call
+        (this.$vnode && this.$vnode.ssrContext) || // stateful
+        (this.parent && this.parent.$vnode && this.parent.$vnode.ssrContext) // functional
+      // 2.2 with runInNewContext: true
+      if (!context && typeof __VUE_SSR_CONTEXT__ !== 'undefined') {
+        context = __VUE_SSR_CONTEXT__
+      }
+      // inject component styles
+      if (injectStyles) {
+        injectStyles.call(this, context)
+      }
+      // register component module identifier for async chunk inferrence
+      if (context && context._registeredComponents) {
+        context._registeredComponents.add(moduleIdentifier)
+      }
+    }
+    // used by ssr in case component is cached and beforeCreate
+    // never gets called
+    options._ssrRegister = hook
+  } else if (injectStyles) {
+    hook = shadowMode
+      ? function () {
+        injectStyles.call(
+          this,
+          (options.functional ? this.parent : this).$root.$options.shadowRoot
+        )
+      }
+      : injectStyles
+  }
+
+  if (hook) {
+    if (options.functional) {
+      // for template-only hot-reload because in that case the render fn doesn't
+      // go through the normalizer
+      options._injectStyles = hook
+      // register for functional component in vue file
+      var originalRender = options.render
+      options.render = function renderWithStyleInjection (h, context) {
+        hook.call(context)
+        return originalRender(h, context)
+      }
+    } else {
+      // inject component registration as beforeCreate hook
+      var existing = options.beforeCreate
+      options.beforeCreate = existing
+        ? [].concat(existing, hook)
+        : [hook]
+    }
+  }
+
+  return {
+    exports: scriptExports,
+    options: options
+  }
+}
+
+
+/***/ }),
+
 /***/ "2ba4":
 /***/ (function(module, exports) {
 
@@ -649,6 +853,18 @@ module.exports = function (argument) {
 /***/ (function(module, exports) {
 
 module.exports = {};
+
+
+/***/ }),
+
+/***/ "408a":
+/***/ (function(module, exports, __webpack_require__) {
+
+var uncurryThis = __webpack_require__("e330");
+
+// `thisNumberValue` abstract operation
+// https://tc39.es/ecma262/#sec-thisnumbervalue
+module.exports = uncurryThis(1.0.valueOf);
 
 
 /***/ }),
@@ -1017,6 +1233,54 @@ module.exports = function (argument) {
 
 /***/ }),
 
+/***/ "5899":
+/***/ (function(module, exports) {
+
+// a string of all valid unicode whitespaces
+module.exports = '\u0009\u000A\u000B\u000C\u000D\u0020\u00A0\u1680\u2000\u2001\u2002' +
+  '\u2003\u2004\u2005\u2006\u2007\u2008\u2009\u200A\u202F\u205F\u3000\u2028\u2029\uFEFF';
+
+
+/***/ }),
+
+/***/ "58a8":
+/***/ (function(module, exports, __webpack_require__) {
+
+var uncurryThis = __webpack_require__("e330");
+var requireObjectCoercible = __webpack_require__("1d80");
+var toString = __webpack_require__("577e");
+var whitespaces = __webpack_require__("5899");
+
+var replace = uncurryThis(''.replace);
+var whitespace = '[' + whitespaces + ']';
+var ltrim = RegExp('^' + whitespace + whitespace + '*');
+var rtrim = RegExp(whitespace + whitespace + '*$');
+
+// `String.prototype.{ trim, trimStart, trimEnd, trimLeft, trimRight }` methods implementation
+var createMethod = function (TYPE) {
+  return function ($this) {
+    var string = toString(requireObjectCoercible($this));
+    if (TYPE & 1) string = replace(string, ltrim, '');
+    if (TYPE & 2) string = replace(string, rtrim, '');
+    return string;
+  };
+};
+
+module.exports = {
+  // `String.prototype.{ trimLeft, trimStart }` methods
+  // https://tc39.es/ecma262/#sec-string.prototype.trimstart
+  start: createMethod(1),
+  // `String.prototype.{ trimRight, trimEnd }` methods
+  // https://tc39.es/ecma262/#sec-string.prototype.trimend
+  end: createMethod(2),
+  // `String.prototype.trim` method
+  // https://tc39.es/ecma262/#sec-string.prototype.trim
+  trim: createMethod(3)
+};
+
+
+/***/ }),
+
 /***/ "5926":
 /***/ (function(module, exports) {
 
@@ -1088,6 +1352,151 @@ module.exports = {
   CONFIGURABLE: CONFIGURABLE
 };
 
+
+/***/ }),
+
+/***/ "631e":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+// ESM COMPAT FLAG
+__webpack_require__.r(__webpack_exports__);
+
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"75050d79-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--1-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/LsHeading.vue?vue&type=template&id=ebfb27b6&
+var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c(("h" + _vm.levelValue),{tag:"component",staticClass:"lsq-element",style:(_vm.style),attrs:{"id":_vm.id}},[(_vm.contentValue)?_c('span',{domProps:{"innerHTML":_vm._s(_vm.contentValue)}}):_vm._t("default")],2)}
+var staticRenderFns = []
+
+
+// CONCATENATED MODULE: ./src/components/LsHeading.vue?vue&type=template&id=ebfb27b6&
+
+// EXTERNAL MODULE: ./node_modules/core-js/modules/es.number.constructor.js
+var es_number_constructor = __webpack_require__("a9e3");
+
+// EXTERNAL MODULE: ./src/mixins/element.js
+var mixins_element = __webpack_require__("2472");
+
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--13-0!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--1-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/LsHeading.vue?vue&type=script&lang=js&
+
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ var LsHeadingvue_type_script_lang_js_ = ({
+  name: 'LsHeading',
+  mixins: [mixins_element["a" /* default */]],
+  props: {
+    id: {
+      type: String,
+      required: true
+    },
+    level: {
+      type: Number,
+      "default": 1,
+      validator: function validator(value) {
+        return value >= 1 && value <= 6;
+      }
+    },
+    content: {
+      type: String,
+      "default": '',
+      input: {
+        type: 'textarea',
+        label: 'Content',
+        placeholder: 'Enter content here...',
+        validate: 'string'
+      }
+    },
+    fontSize: {
+      type: String,
+      "default": null,
+      input: {
+        type: 'text',
+        label: 'Font Size',
+        placeholder: '16px',
+        validate: 'string'
+      }
+    },
+    fontWeight: {
+      type: String,
+      "default": null,
+      input: {
+        type: 'text',
+        label: 'Font Weight',
+        placeholder: 'bold',
+        validate: 'string'
+      }
+    },
+    lineHeight: {
+      type: String,
+      "default": null,
+      input: {
+        type: 'text',
+        label: 'Line Height',
+        placeholder: '1.5em',
+        validate: 'string'
+      }
+    }
+  },
+  computed: {
+    levelValue: function levelValue() {
+      return this.elementValue('level');
+    },
+    contentValue: function contentValue() {
+      return this.elementValue('content');
+    },
+    style: function style() {
+      var style = {};
+
+      if (this.elementValue('fontSize')) {
+        style.fontSize = this.elementValue('fontSize');
+      }
+
+      if (this.elementValue('fontWeight')) {
+        style.fontWeight = this.elementValue('fontWeight');
+      }
+
+      if (this.elementValue('lineHeight')) {
+        style.lineHeight = this.elementValue('lineHeight');
+      }
+
+      return style;
+    }
+  }
+});
+// CONCATENATED MODULE: ./src/components/LsHeading.vue?vue&type=script&lang=js&
+ /* harmony default export */ var components_LsHeadingvue_type_script_lang_js_ = (LsHeadingvue_type_script_lang_js_); 
+// EXTERNAL MODULE: ./node_modules/vue-loader/lib/runtime/componentNormalizer.js
+var componentNormalizer = __webpack_require__("2877");
+
+// CONCATENATED MODULE: ./src/components/LsHeading.vue
+
+
+
+
+
+/* normalize component */
+
+var component = Object(componentNormalizer["a" /* default */])(
+  components_LsHeadingvue_type_script_lang_js_,
+  render,
+  staticRenderFns,
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* harmony default export */ var LsHeading = __webpack_exports__["default"] = (component.exports);
 
 /***/ }),
 
@@ -1336,6 +1745,31 @@ var TEMPLATE = String(String).split('String');
 
 /***/ }),
 
+/***/ "7156":
+/***/ (function(module, exports, __webpack_require__) {
+
+var isCallable = __webpack_require__("1626");
+var isObject = __webpack_require__("861d");
+var setPrototypeOf = __webpack_require__("d2bb");
+
+// makes subclassing work correct for wrapped built-ins
+module.exports = function ($this, dummy, Wrapper) {
+  var NewTarget, NewTargetPrototype;
+  if (
+    // it can work only with native `setPrototypeOf`
+    setPrototypeOf &&
+    // we haven't completely correct pre-ES6 way for getting `new.target`, so use this
+    isCallable(NewTarget = dummy.constructor) &&
+    NewTarget !== Wrapper &&
+    isObject(NewTargetPrototype = NewTarget.prototype) &&
+    NewTargetPrototype !== Wrapper.prototype
+  ) setPrototypeOf($this, NewTargetPrototype);
+  return $this;
+};
+
+
+/***/ }),
+
 /***/ "7418":
 /***/ (function(module, exports) {
 
@@ -1390,6 +1824,136 @@ module.exports = function (argument) {
   return Object(requireObjectCoercible(argument));
 };
 
+
+/***/ }),
+
+/***/ "7c3f":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+// ESM COMPAT FLAG
+__webpack_require__.r(__webpack_exports__);
+
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"75050d79-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--1-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/LsText.vue?vue&type=template&id=919d48a8&
+var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c(_vm.tag,{tag:"component",staticClass:"lsq-element",style:(_vm.style),attrs:{"id":_vm.id}},[(_vm.contentValue)?_c('span',{domProps:{"innerHTML":_vm._s(_vm.contentValue)}}):_vm._t("default")],2)}
+var staticRenderFns = []
+
+
+// CONCATENATED MODULE: ./src/components/LsText.vue?vue&type=template&id=919d48a8&
+
+// EXTERNAL MODULE: ./src/mixins/element.js
+var mixins_element = __webpack_require__("2472");
+
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--13-0!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--1-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/LsText.vue?vue&type=script&lang=js&
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ var LsTextvue_type_script_lang_js_ = ({
+  name: 'LsText',
+  mixins: [mixins_element["a" /* default */]],
+  props: {
+    id: {
+      type: String,
+      required: true
+    },
+    tag: {
+      type: String,
+      "default": 'p'
+    },
+    content: {
+      type: String,
+      "default": '',
+      input: {
+        type: 'textarea',
+        label: 'Content',
+        placeholder: 'Enter content here...',
+        validate: 'string'
+      }
+    },
+    fontSize: {
+      type: String,
+      "default": null,
+      input: {
+        type: 'text',
+        label: 'Font Size',
+        placeholder: '16px',
+        validate: 'string'
+      }
+    },
+    fontWeight: {
+      type: String,
+      "default": null,
+      input: {
+        type: 'text',
+        label: 'Font Weight',
+        placeholder: 'bold',
+        validate: 'string'
+      }
+    },
+    lineHeight: {
+      type: String,
+      "default": null,
+      input: {
+        type: 'text',
+        label: 'Line Height',
+        placeholder: '1.5em',
+        validate: 'string'
+      }
+    }
+  },
+  computed: {
+    contentValue: function contentValue() {
+      return this.elementValue('content');
+    },
+    style: function style() {
+      var style = {};
+
+      if (this.elementValue('fontSize')) {
+        style.fontSize = this.elementValue('fontSize');
+      }
+
+      if (this.elementValue('fontWeight')) {
+        style.fontWeight = this.elementValue('fontWeight');
+      }
+
+      if (this.elementValue('lineHeight')) {
+        style.lineHeight = this.elementValue('lineHeight');
+      }
+
+      return style;
+    }
+  }
+});
+// CONCATENATED MODULE: ./src/components/LsText.vue?vue&type=script&lang=js&
+ /* harmony default export */ var components_LsTextvue_type_script_lang_js_ = (LsTextvue_type_script_lang_js_); 
+// EXTERNAL MODULE: ./node_modules/vue-loader/lib/runtime/componentNormalizer.js
+var componentNormalizer = __webpack_require__("2877");
+
+// CONCATENATED MODULE: ./src/components/LsText.vue
+
+
+
+
+
+/* normalize component */
+
+var component = Object(componentNormalizer["a" /* default */])(
+  components_LsTextvue_type_script_lang_js_,
+  render,
+  staticRenderFns,
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* harmony default export */ var LsText = __webpack_exports__["default"] = (component.exports);
 
 /***/ }),
 
@@ -1769,35 +2333,6 @@ module.exports = function (S, index, unicode) {
 
 /***/ }),
 
-/***/ "8bb8":
-/***/ (function(module, exports, __webpack_require__) {
-
-var map = {
-	"./LsText.vue": "b27f"
-};
-
-
-function webpackContext(req) {
-	var id = webpackContextResolve(req);
-	return __webpack_require__(id);
-}
-function webpackContextResolve(req) {
-	if(!__webpack_require__.o(map, req)) {
-		var e = new Error("Cannot find module '" + req + "'");
-		e.code = 'MODULE_NOT_FOUND';
-		throw e;
-	}
-	return map[req];
-}
-webpackContext.keys = function webpackContextKeys() {
-	return Object.keys(map);
-};
-webpackContext.resolve = webpackContextResolve;
-module.exports = webpackContext;
-webpackContext.id = "8bb8";
-
-/***/ }),
-
 /***/ "90e3":
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -2131,6 +2666,102 @@ module.exports = function (METHOD_NAME, argument) {
 
 /***/ }),
 
+/***/ "a9e3":
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var DESCRIPTORS = __webpack_require__("83ab");
+var global = __webpack_require__("da84");
+var uncurryThis = __webpack_require__("e330");
+var isForced = __webpack_require__("94ca");
+var redefine = __webpack_require__("6eeb");
+var hasOwn = __webpack_require__("1a2d");
+var inheritIfRequired = __webpack_require__("7156");
+var isPrototypeOf = __webpack_require__("3a9b");
+var isSymbol = __webpack_require__("d9b5");
+var toPrimitive = __webpack_require__("c04e");
+var fails = __webpack_require__("d039");
+var getOwnPropertyNames = __webpack_require__("241c").f;
+var getOwnPropertyDescriptor = __webpack_require__("06cf").f;
+var defineProperty = __webpack_require__("9bf2").f;
+var thisNumberValue = __webpack_require__("408a");
+var trim = __webpack_require__("58a8").trim;
+
+var NUMBER = 'Number';
+var NativeNumber = global[NUMBER];
+var NumberPrototype = NativeNumber.prototype;
+var TypeError = global.TypeError;
+var arraySlice = uncurryThis(''.slice);
+var charCodeAt = uncurryThis(''.charCodeAt);
+
+// `ToNumeric` abstract operation
+// https://tc39.es/ecma262/#sec-tonumeric
+var toNumeric = function (value) {
+  var primValue = toPrimitive(value, 'number');
+  return typeof primValue == 'bigint' ? primValue : toNumber(primValue);
+};
+
+// `ToNumber` abstract operation
+// https://tc39.es/ecma262/#sec-tonumber
+var toNumber = function (argument) {
+  var it = toPrimitive(argument, 'number');
+  var first, third, radix, maxCode, digits, length, index, code;
+  if (isSymbol(it)) throw TypeError('Cannot convert a Symbol value to a number');
+  if (typeof it == 'string' && it.length > 2) {
+    it = trim(it);
+    first = charCodeAt(it, 0);
+    if (first === 43 || first === 45) {
+      third = charCodeAt(it, 2);
+      if (third === 88 || third === 120) return NaN; // Number('+0x1') should be NaN, old V8 fix
+    } else if (first === 48) {
+      switch (charCodeAt(it, 1)) {
+        case 66: case 98: radix = 2; maxCode = 49; break; // fast equal of /^0b[01]+$/i
+        case 79: case 111: radix = 8; maxCode = 55; break; // fast equal of /^0o[0-7]+$/i
+        default: return +it;
+      }
+      digits = arraySlice(it, 2);
+      length = digits.length;
+      for (index = 0; index < length; index++) {
+        code = charCodeAt(digits, index);
+        // parseInt parses a string to a first unavailable symbol
+        // but ToNumber should return NaN if a string contains unavailable symbols
+        if (code < 48 || code > maxCode) return NaN;
+      } return parseInt(digits, radix);
+    }
+  } return +it;
+};
+
+// `Number` constructor
+// https://tc39.es/ecma262/#sec-number-constructor
+if (isForced(NUMBER, !NativeNumber(' 0o1') || !NativeNumber('0b1') || NativeNumber('+0x1'))) {
+  var NumberWrapper = function Number(value) {
+    var n = arguments.length < 1 ? 0 : NativeNumber(toNumeric(value));
+    var dummy = this;
+    // check on 1..constructor(foo) case
+    return isPrototypeOf(NumberPrototype, dummy) && fails(function () { thisNumberValue(dummy); })
+      ? inheritIfRequired(Object(n), dummy, NumberWrapper) : n;
+  };
+  for (var keys = DESCRIPTORS ? getOwnPropertyNames(NativeNumber) : (
+    // ES3:
+    'MAX_VALUE,MIN_VALUE,NaN,NEGATIVE_INFINITY,POSITIVE_INFINITY,' +
+    // ES2015 (in case, if modules with ES2015 Number statics required before):
+    'EPSILON,MAX_SAFE_INTEGER,MIN_SAFE_INTEGER,isFinite,isInteger,isNaN,isSafeInteger,parseFloat,parseInt,' +
+    // ESNext
+    'fromString,range'
+  ).split(','), j = 0, key; keys.length > j; j++) {
+    if (hasOwn(NativeNumber, key = keys[j]) && !hasOwn(NumberWrapper, key)) {
+      defineProperty(NumberWrapper, key, getOwnPropertyDescriptor(NativeNumber, key));
+    }
+  }
+  NumberWrapper.prototype = NumberPrototype;
+  NumberPrototype.constructor = NumberWrapper;
+  redefine(global, NUMBER, NumberWrapper);
+}
+
+
+/***/ }),
+
 /***/ "ac1f":
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -2261,238 +2892,6 @@ module.exports = TO_STRING_TAG_SUPPORT ? {}.toString : function toString() {
   return '[object ' + classof(this) + ']';
 };
 
-
-/***/ }),
-
-/***/ "b27f":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-// ESM COMPAT FLAG
-__webpack_require__.r(__webpack_exports__);
-
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"75050d79-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--1-0!./node_modules/vue-loader/lib??vue-loader-options!./src/LsText.vue?vue&type=template&id=4f26b0b6&
-var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('p',{staticClass:"lsq-element",style:(_vm.style),attrs:{"id":_vm.id}},[(_vm.contentValue)?_c('span',{domProps:{"innerHTML":_vm._s(_vm.contentValue)}}):_vm._t("default")],2)}
-var staticRenderFns = []
-
-
-// CONCATENATED MODULE: ./src/LsText.vue?vue&type=template&id=4f26b0b6&
-
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--13-0!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--1-0!./node_modules/vue-loader/lib??vue-loader-options!./src/LsText.vue?vue&type=script&lang=js&
-//
-//
-//
-//
-//
-//
-//
-/* harmony default export */ var LsTextvue_type_script_lang_js_ = ({
-  name: 'LsText',
-  inject: ['wedgeData'],
-  props: {
-    id: {
-      type: String,
-      required: true
-    },
-    content: {
-      type: String,
-      "default": '',
-      input: {
-        type: 'textarea',
-        label: 'Content',
-        placeholder: 'Enter content here...',
-        validate: 'string'
-      }
-    },
-    fontSize: {
-      type: String,
-      "default": null,
-      input: {
-        type: 'text',
-        label: 'Font Size',
-        placeholder: '16px',
-        validate: 'string'
-      }
-    },
-    fontWeight: {
-      type: String,
-      "default": null,
-      input: {
-        type: 'text',
-        label: 'Font Weight',
-        placeholder: 'bold',
-        validate: 'string'
-      }
-    },
-    lineHeight: {
-      type: String,
-      "default": null,
-      input: {
-        type: 'text',
-        label: 'Line Height',
-        placeholder: '1.5em',
-        validate: 'string'
-      }
-    }
-  },
-  computed: {
-    contentValue: function contentValue() {
-      return this.elementValue('content');
-    },
-    style: function style() {
-      var style = {};
-
-      if (this.elementValue('fontSize')) {
-        style.fontSize = this.elementValue('fontSize');
-      }
-
-      if (this.elementValue('fontWeight')) {
-        style.fontWeight = this.elementValue('fontWeight');
-      }
-
-      if (this.elementValue('lineHeight')) {
-        style.lineHeight = this.elementValue('lineHeight');
-      }
-
-      return style;
-    }
-  },
-  methods: {
-    elementValue: function elementValue(key) {
-      if (this.wedgeData.elements[this.id] && this.wedgeData.elements[this.id][key]) {
-        return this.wedgeData.elements[this.id][key];
-      }
-
-      if (this[key]) {
-        return this[key];
-      }
-
-      return null;
-    }
-  }
-});
-// CONCATENATED MODULE: ./src/LsText.vue?vue&type=script&lang=js&
- /* harmony default export */ var src_LsTextvue_type_script_lang_js_ = (LsTextvue_type_script_lang_js_); 
-// CONCATENATED MODULE: ./node_modules/vue-loader/lib/runtime/componentNormalizer.js
-/* globals __VUE_SSR_CONTEXT__ */
-
-// IMPORTANT: Do NOT use ES2015 features in this file (except for modules).
-// This module is a runtime utility for cleaner component module output and will
-// be included in the final webpack user bundle.
-
-function normalizeComponent (
-  scriptExports,
-  render,
-  staticRenderFns,
-  functionalTemplate,
-  injectStyles,
-  scopeId,
-  moduleIdentifier, /* server only */
-  shadowMode /* vue-cli only */
-) {
-  // Vue.extend constructor export interop
-  var options = typeof scriptExports === 'function'
-    ? scriptExports.options
-    : scriptExports
-
-  // render functions
-  if (render) {
-    options.render = render
-    options.staticRenderFns = staticRenderFns
-    options._compiled = true
-  }
-
-  // functional template
-  if (functionalTemplate) {
-    options.functional = true
-  }
-
-  // scopedId
-  if (scopeId) {
-    options._scopeId = 'data-v-' + scopeId
-  }
-
-  var hook
-  if (moduleIdentifier) { // server build
-    hook = function (context) {
-      // 2.3 injection
-      context =
-        context || // cached call
-        (this.$vnode && this.$vnode.ssrContext) || // stateful
-        (this.parent && this.parent.$vnode && this.parent.$vnode.ssrContext) // functional
-      // 2.2 with runInNewContext: true
-      if (!context && typeof __VUE_SSR_CONTEXT__ !== 'undefined') {
-        context = __VUE_SSR_CONTEXT__
-      }
-      // inject component styles
-      if (injectStyles) {
-        injectStyles.call(this, context)
-      }
-      // register component module identifier for async chunk inferrence
-      if (context && context._registeredComponents) {
-        context._registeredComponents.add(moduleIdentifier)
-      }
-    }
-    // used by ssr in case component is cached and beforeCreate
-    // never gets called
-    options._ssrRegister = hook
-  } else if (injectStyles) {
-    hook = shadowMode
-      ? function () {
-        injectStyles.call(
-          this,
-          (options.functional ? this.parent : this).$root.$options.shadowRoot
-        )
-      }
-      : injectStyles
-  }
-
-  if (hook) {
-    if (options.functional) {
-      // for template-only hot-reload because in that case the render fn doesn't
-      // go through the normalizer
-      options._injectStyles = hook
-      // register for functional component in vue file
-      var originalRender = options.render
-      options.render = function renderWithStyleInjection (h, context) {
-        hook.call(context)
-        return originalRender(h, context)
-      }
-    } else {
-      // inject component registration as beforeCreate hook
-      var existing = options.beforeCreate
-      options.beforeCreate = existing
-        ? [].concat(existing, hook)
-        : [hook]
-    }
-  }
-
-  return {
-    exports: scriptExports,
-    options: options
-  }
-}
-
-// CONCATENATED MODULE: ./src/LsText.vue
-
-
-
-
-
-/* normalize component */
-
-var component = normalizeComponent(
-  src_LsTextvue_type_script_lang_js_,
-  render,
-  staticRenderFns,
-  false,
-  null,
-  null,
-  null
-  
-)
-
-/* harmony default export */ var LsText = __webpack_exports__["default"] = (component.exports);
 
 /***/ }),
 
@@ -2686,6 +3085,164 @@ var store = global[SHARED] || setGlobal(SHARED, {});
 
 module.exports = store;
 
+
+/***/ }),
+
+/***/ "c6da":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+// ESM COMPAT FLAG
+__webpack_require__.r(__webpack_exports__);
+
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"75050d79-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--1-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/LsButton.vue?vue&type=template&id=6c360a51&
+var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c(_vm.tag,{tag:"component",staticClass:"lsq-element",style:(_vm.style),attrs:{"href":_vm.linkValue,"target":_vm.targetValue,"id":_vm.id}},[(_vm.textValue)?_c('span',{domProps:{"innerHTML":_vm._s(_vm.textValue)}}):_vm._t("default")],2)}
+var staticRenderFns = []
+
+
+// CONCATENATED MODULE: ./src/components/LsButton.vue?vue&type=template&id=6c360a51&
+
+// EXTERNAL MODULE: ./src/mixins/element.js
+var mixins_element = __webpack_require__("2472");
+
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--13-0!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--1-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/LsButton.vue?vue&type=script&lang=js&
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ var LsButtonvue_type_script_lang_js_ = ({
+  name: 'LsButton',
+  mixins: [mixins_element["a" /* default */]],
+  props: {
+    id: {
+      type: String,
+      required: true
+    },
+    tag: {
+      type: String,
+      "default": 'a'
+    },
+    text: {
+      type: String,
+      "default": '',
+      input: {
+        type: 'text',
+        label: 'Text',
+        placeholder: 'Call to action...',
+        validate: 'string'
+      }
+    },
+    link: {
+      type: String,
+      "default": '',
+      input: {
+        type: 'text',
+        label: 'Link',
+        placeholder: 'https://example.com',
+        validate: 'string'
+      }
+    },
+    target: {
+      type: String,
+      "default": '_self',
+      input: {
+        type: 'select',
+        label: 'Target',
+        options: [{
+          label: 'Same Window',
+          value: '_self'
+        }, {
+          label: 'New Window',
+          value: '_blank'
+        }]
+      }
+    },
+    fontSize: {
+      type: String,
+      "default": null,
+      input: {
+        type: 'text',
+        label: 'Font Size',
+        placeholder: '16px',
+        validate: 'string'
+      }
+    },
+    fontWeight: {
+      type: String,
+      "default": null,
+      input: {
+        type: 'text',
+        label: 'Font Weight',
+        placeholder: 'bold',
+        validate: 'string'
+      }
+    }
+  },
+  computed: {
+    textValue: function textValue() {
+      return this.elementValue('text');
+    },
+    linkValue: function linkValue() {
+      return this.elementValue('link');
+    },
+    targetValue: function targetValue() {
+      return this.elementValue('target');
+    },
+    style: function style() {
+      var style = {};
+
+      if (this.elementValue('fontSize')) {
+        style.fontSize = this.elementValue('fontSize');
+      }
+
+      if (this.elementValue('fontWeight')) {
+        style.fontWeight = this.elementValue('fontWeight');
+      }
+
+      if (this.elementValue('lineHeight')) {
+        style.lineHeight = this.elementValue('lineHeight');
+      }
+
+      return style;
+    }
+  }
+});
+// CONCATENATED MODULE: ./src/components/LsButton.vue?vue&type=script&lang=js&
+ /* harmony default export */ var components_LsButtonvue_type_script_lang_js_ = (LsButtonvue_type_script_lang_js_); 
+// EXTERNAL MODULE: ./node_modules/vue-loader/lib/runtime/componentNormalizer.js
+var componentNormalizer = __webpack_require__("2877");
+
+// CONCATENATED MODULE: ./src/components/LsButton.vue
+
+
+
+
+
+/* normalize component */
+
+var component = Object(componentNormalizer["a" /* default */])(
+  components_LsButtonvue_type_script_lang_js_,
+  render,
+  staticRenderFns,
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* harmony default export */ var LsButton = __webpack_exports__["default"] = (component.exports);
 
 /***/ }),
 
@@ -3383,7 +3940,7 @@ var es_regexp_exec = __webpack_require__("ac1f");
 // EXTERNAL MODULE: ./node_modules/core-js/modules/es.string.replace.js
 var es_string_replace = __webpack_require__("5319");
 
-// CONCATENATED MODULE: ./src/index.js
+// CONCATENATED MODULE: ./src/lib.js
 
 
 
@@ -3393,7 +3950,7 @@ var es_string_replace = __webpack_require__("5319");
 
 var LsElements = {
   install: function install(Vue) {
-    var requireWedgeComponent = __webpack_require__("8bb8");
+    var requireWedgeComponent = __webpack_require__("ffe0");
 
     requireWedgeComponent.keys().forEach(function (fileName) {
       var componentConfig = requireWedgeComponent(fileName);
@@ -3404,7 +3961,7 @@ var LsElements = {
     });
   }
 };
-/* harmony default export */ var src_0 = (LsElements);
+/* harmony default export */ var lib = (LsElements);
 
 if (typeof window !== 'undefined' && window.Vue) {
   window.Vue.use(LsElements);
@@ -3412,7 +3969,7 @@ if (typeof window !== 'undefined' && window.Vue) {
 // CONCATENATED MODULE: ./node_modules/@vue/cli-service/lib/commands/build/entry-lib.js
 
 
-/* harmony default export */ var entry_lib = __webpack_exports__["default"] = (src_0);
+/* harmony default export */ var entry_lib = __webpack_exports__["default"] = (lib);
 
 
 
@@ -3501,6 +4058,38 @@ module.exports = NATIVE_SYMBOL
   && !Symbol.sham
   && typeof Symbol.iterator == 'symbol';
 
+
+/***/ }),
+
+/***/ "ffe0":
+/***/ (function(module, exports, __webpack_require__) {
+
+var map = {
+	"./LsButton.vue": "c6da",
+	"./LsHeading.vue": "631e",
+	"./LsImage.vue": "199d",
+	"./LsText.vue": "7c3f"
+};
+
+
+function webpackContext(req) {
+	var id = webpackContextResolve(req);
+	return __webpack_require__(id);
+}
+function webpackContextResolve(req) {
+	if(!__webpack_require__.o(map, req)) {
+		var e = new Error("Cannot find module '" + req + "'");
+		e.code = 'MODULE_NOT_FOUND';
+		throw e;
+	}
+	return map[req];
+}
+webpackContext.keys = function webpackContextKeys() {
+	return Object.keys(map);
+};
+webpackContext.resolve = webpackContextResolve;
+module.exports = webpackContext;
+webpackContext.id = "ffe0";
 
 /***/ })
 
