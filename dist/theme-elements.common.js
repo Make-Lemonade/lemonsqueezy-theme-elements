@@ -3505,4 +3505,4 @@ module.exports = NATIVE_SYMBOL
 /***/ })
 
 /******/ });
-//# sourceMappingURL=lemonsqueezy-theme-elements.common.js.map
+//# sourceMappingURL=theme-elements.common.js.map

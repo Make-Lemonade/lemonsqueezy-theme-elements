@@ -4,9 +4,9 @@
 	else if(typeof define === 'function' && define.amd)
 		define([], factory);
 	else if(typeof exports === 'object')
-		exports["lemonsqueezy-theme-elements"] = factory();
+		exports["theme-elements"] = factory();
 	else
-		root["lemonsqueezy-theme-elements"] = factory();
+		root["theme-elements"] = factory();
 })((typeof self !== 'undefined' ? self : this), function() {
 return /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
@@ -3515,4 +3515,4 @@ module.exports = NATIVE_SYMBOL
 
 /******/ });
 });
-//# sourceMappingURL=lemonsqueezy-theme-elements.umd.js.map
+//# sourceMappingURL=theme-elements.umd.js.map

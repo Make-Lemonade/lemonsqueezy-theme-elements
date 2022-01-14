@@ -1,5 +1,5 @@
 {
-  "name": "lemonsqueezy-theme-elements",
+  "name": "@lemonsqueezy/theme-elements",
   "version": "0.1.0",
   "scripts": {
     "serve": "vue-cli-service serve",
@@ -7,8 +7,8 @@
     "lint": "vue-cli-service lint",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "main": "dist/lemonsqueezy-theme-elements.common.js",
-  "browser": "dist/lemonsqueezy-theme-elements.umd.js",
+  "main": "dist/theme-elements.common.js",
+  "browser": "dist/theme-elements.umd.js",
   "devDependencies": {
     "@vue/cli-plugin-babel": "~4.5.0",
     "@vue/cli-plugin-eslint": "~4.5.0",
