@@ -25,9 +25,23 @@
             </LsHeading>
         </div>
         <div>
-            <h1>LsImage</h1>
-            <LsImage id="image-1" src="https://via.placeholder.com/200" />
-            <LsImage id="image-2" src="https://via.placeholder.com/200" />
+            <h1>LsMedia</h1>
+            <LsMedia
+                id="media-1"
+                type="image"
+                url="https://via.placeholder.com/200"
+            />
+            <LsMedia
+                id="media-2"
+                type="image"
+                url="https://via.placeholder.com/200"
+            />
+            <br>
+            <LsMedia
+                id="media-3"
+                type="video"
+                url="https://archive.org/download/ElephantsDream/ed_1024_512kb.mp4"
+            />
         </div>
         <div>
             <h1>LsButton</h1>
