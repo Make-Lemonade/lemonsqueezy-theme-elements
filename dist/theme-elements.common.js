@@ -388,80 +388,6 @@ module.exports = !STRICT_METHOD ? function forEach(callbackfn /* , thisArg */) {
 
 /***/ }),
 
-/***/ "199d":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-// ESM COMPAT FLAG
-__webpack_require__.r(__webpack_exports__);
-
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"75050d79-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--1-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/LsImage.vue?vue&type=template&id=321323d3&
-var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return (_vm.srcValue)?_c('img',{staticClass:"lsq-element",attrs:{"id":_vm.id,"src":_vm.srcValue}}):_vm._e()}
-var staticRenderFns = []
-
-
-// CONCATENATED MODULE: ./src/components/LsImage.vue?vue&type=template&id=321323d3&
-
-// EXTERNAL MODULE: ./src/mixins/element.js
-var mixins_element = __webpack_require__("2472");
-
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--13-0!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--1-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/LsImage.vue?vue&type=script&lang=js&
-//
-//
-//
-//
-
-/* harmony default export */ var LsImagevue_type_script_lang_js_ = ({
-  name: 'LsImage',
-  mixins: [mixins_element["a" /* default */]],
-  props: {
-    id: {
-      type: String,
-      required: true
-    },
-    src: {
-      type: String,
-      "default": '',
-      input: {
-        type: 'file',
-        label: 'Image'
-      }
-    }
-  },
-  computed: {
-    srcValue: function srcValue() {
-      return this.elementValue('src');
-    }
-  }
-});
-// CONCATENATED MODULE: ./src/components/LsImage.vue?vue&type=script&lang=js&
- /* harmony default export */ var components_LsImagevue_type_script_lang_js_ = (LsImagevue_type_script_lang_js_); 
-// EXTERNAL MODULE: ./node_modules/vue-loader/lib/runtime/componentNormalizer.js
-var componentNormalizer = __webpack_require__("2877");
-
-// CONCATENATED MODULE: ./src/components/LsImage.vue
-
-
-
-
-
-/* normalize component */
-
-var component = Object(componentNormalizer["a" /* default */])(
-  components_LsImagevue_type_script_lang_js_,
-  render,
-  staticRenderFns,
-  false,
-  null,
-  null,
-  null
-  
-)
-
-/* harmony default export */ var LsImage = __webpack_exports__["default"] = (component.exports);
-
-/***/ }),
-
 /***/ "1a2d":
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -1827,6 +1753,123 @@ module.exports = function (argument) {
 
 /***/ }),
 
+/***/ "7bd6":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+// ESM COMPAT FLAG
+__webpack_require__.r(__webpack_exports__);
+
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"75050d79-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--1-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/LsAccordion.vue?vue&type=template&id=2ea83dc9&
+var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return (_vm.itemsValue.length)?_c('div',{staticClass:"lsq-element",attrs:{"id":_vm.id}},_vm._l((_vm.itemsValue),function(item,index){return _c('details',{key:index,attrs:{"open":item.open || false}},[_vm._t("item",function(){return [_c('summary',[_vm._v(_vm._s(item.title))]),_c('p',[_vm._v(_vm._s(item.content))])]},{"item":item})],2)}),0):_vm._e()}
+var staticRenderFns = []
+
+
+// CONCATENATED MODULE: ./src/components/LsAccordion.vue?vue&type=template&id=2ea83dc9&
+
+// EXTERNAL MODULE: ./src/mixins/element.js
+var mixins_element = __webpack_require__("2472");
+
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--13-0!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--1-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/LsAccordion.vue?vue&type=script&lang=js&
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ var LsAccordionvue_type_script_lang_js_ = ({
+  name: 'LsAccordion',
+  mixins: [mixins_element["a" /* default */]],
+  props: {
+    id: {
+      type: String,
+      required: true
+    },
+    items: {
+      type: Array,
+      "default": function _default() {
+        return [];
+      },
+      input: {
+        type: 'repeater',
+        label: 'Items',
+        fields: {
+          title: {
+            type: String,
+            "default": '',
+            input: {
+              type: 'text',
+              label: 'Title',
+              placeholder: 'Enter title here...',
+              validate: 'string'
+            }
+          },
+          content: {
+            type: String,
+            "default": '',
+            input: {
+              type: 'textarea',
+              label: 'Content',
+              placeholder: 'Enter content here...',
+              validate: 'string'
+            }
+          },
+          open: {
+            type: Boolean,
+            "default": false,
+            input: {
+              type: 'checkbox',
+              label: 'Open'
+            }
+          }
+        }
+      }
+    }
+  },
+  computed: {
+    itemsValue: function itemsValue() {
+      return this.elementValue('items');
+    }
+  }
+});
+// CONCATENATED MODULE: ./src/components/LsAccordion.vue?vue&type=script&lang=js&
+ /* harmony default export */ var components_LsAccordionvue_type_script_lang_js_ = (LsAccordionvue_type_script_lang_js_); 
+// EXTERNAL MODULE: ./node_modules/vue-loader/lib/runtime/componentNormalizer.js
+var componentNormalizer = __webpack_require__("2877");
+
+// CONCATENATED MODULE: ./src/components/LsAccordion.vue
+
+
+
+
+
+/* normalize component */
+
+var component = Object(componentNormalizer["a" /* default */])(
+  components_LsAccordionvue_type_script_lang_js_,
+  render,
+  staticRenderFns,
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* harmony default export */ var LsAccordion = __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
 /***/ "7c3f":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -2595,6 +2638,104 @@ module.exports = function (IteratorConstructor, NAME, next, ENUMERABLE_NEXT) {
 
 /***/ }),
 
+/***/ "9ee3":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+// ESM COMPAT FLAG
+__webpack_require__.r(__webpack_exports__);
+
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"75050d79-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--1-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/LsMedia.vue?vue&type=template&id=8e3f7f14&
+var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return (_vm.type === 'image' && _vm.urlValue)?_c('img',{staticClass:"lsq-element",attrs:{"id":_vm.id,"src":_vm.urlValue}}):(_vm.type === 'video' && _vm.urlValue)?_c('video',{attrs:{"width":"620","controls":""}},[_c('source',{attrs:{"src":_vm.urlValue,"type":"video/mp4"}})]):_vm._e()}
+var staticRenderFns = []
+
+
+// CONCATENATED MODULE: ./src/components/LsMedia.vue?vue&type=template&id=8e3f7f14&
+
+// EXTERNAL MODULE: ./src/mixins/element.js
+var mixins_element = __webpack_require__("2472");
+
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--13-0!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--1-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/LsMedia.vue?vue&type=script&lang=js&
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ var LsMediavue_type_script_lang_js_ = ({
+  name: 'LsMedia',
+  mixins: [mixins_element["a" /* default */]],
+  props: {
+    id: {
+      type: String,
+      required: true
+    },
+    type: {
+      type: String,
+      "default": 'image',
+      input: {
+        type: 'select',
+        label: 'Type',
+        options: [{
+          label: 'Image',
+          value: 'image'
+        }, {
+          label: 'Video',
+          value: 'video'
+        }]
+      }
+    },
+    url: {
+      type: String,
+      "default": '',
+      input: {
+        type: 'file',
+        label: 'Media',
+        validate: 'url'
+      }
+    }
+  },
+  computed: {
+    urlValue: function urlValue() {
+      return this.elementValue('url');
+    }
+  }
+});
+// CONCATENATED MODULE: ./src/components/LsMedia.vue?vue&type=script&lang=js&
+ /* harmony default export */ var components_LsMediavue_type_script_lang_js_ = (LsMediavue_type_script_lang_js_); 
+// EXTERNAL MODULE: ./node_modules/vue-loader/lib/runtime/componentNormalizer.js
+var componentNormalizer = __webpack_require__("2877");
+
+// CONCATENATED MODULE: ./src/components/LsMedia.vue
+
+
+
+
+
+/* normalize component */
+
+var component = Object(componentNormalizer["a" /* default */])(
+  components_LsMediavue_type_script_lang_js_,
+  render,
+  staticRenderFns,
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* harmony default export */ var LsMedia = __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
 /***/ "9f7f":
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -3003,6 +3144,169 @@ module.exports = {
   filterReject: createMethod(7)
 };
 
+
+/***/ }),
+
+/***/ "b767":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+// ESM COMPAT FLAG
+__webpack_require__.r(__webpack_exports__);
+
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"75050d79-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--1-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/LsIcon.vue?vue&type=template&id=1b4efd02&
+var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('span',{staticClass:"lsq-element",style:(_vm.style),attrs:{"id":_vm.id}},[(_vm.iconValue)?_c('span',{domProps:{"innerHTML":_vm._s(_vm.iconValue)}}):_c('svg',{attrs:{"width":"24","height":"24","fill":"none","viewBox":"0 0 24 24"}},[_c('path',{attrs:{"stroke":"currentColor","stroke-linecap":"round","stroke-linejoin":"round","stroke-width":"1.5","d":"M12 4.75L13.75 10.25H19.25L14.75 13.75L16.25 19.25L12 15.75L7.75 19.25L9.25 13.75L4.75 10.25H10.25L12 4.75Z"}})])])}
+var staticRenderFns = []
+
+
+// CONCATENATED MODULE: ./src/components/LsIcon.vue?vue&type=template&id=1b4efd02&
+
+// EXTERNAL MODULE: ./src/mixins/element.js
+var mixins_element = __webpack_require__("2472");
+
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--13-0!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--1-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/LsIcon.vue?vue&type=script&lang=js&
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ var LsIconvue_type_script_lang_js_ = ({
+  name: 'LsIcon',
+  mixins: [mixins_element["a" /* default */]],
+  props: {
+    id: {
+      type: String,
+      required: true
+    },
+    iconSet: {
+      type: String,
+      "default": 'iconic',
+      input: {
+        type: 'select',
+        label: 'Icon Set',
+        options: [{
+          label: 'Iconic',
+          value: 'iconic'
+        }]
+      }
+    },
+    icon: {
+      type: String,
+      "default": '',
+      input: {
+        type: 'iconpicker',
+        label: 'Icon'
+      }
+    },
+    size: {
+      type: String,
+      "default": '40px',
+      input: {
+        type: 'text',
+        label: 'Size',
+        placeholder: '40px',
+        validate: 'string'
+      }
+    },
+    backgroundColor: {
+      type: String,
+      "default": '#7047eb',
+      input: {
+        type: 'color',
+        label: 'Background Color',
+        placeholder: '#7047eb',
+        validate: 'string'
+      }
+    },
+    color: {
+      type: String,
+      "default": '#ffffff',
+      input: {
+        type: 'color',
+        label: 'Color',
+        placeholder: '#ffffff',
+        validate: 'string'
+      }
+    },
+    borderRadius: {
+      type: String,
+      "default": '40px',
+      input: {
+        type: 'text',
+        label: 'Border Radius',
+        placeholder: '40px',
+        validate: 'string'
+      }
+    }
+  },
+  computed: {
+    iconValue: function iconValue() {
+      return this.elementValue('icon');
+    },
+    style: function style() {
+      var style = {
+        display: 'inline-flex',
+        alignItems: 'center',
+        justifyContent: 'center'
+      };
+
+      if (this.elementValue('size')) {
+        style.width = this.elementValue('size');
+        style.height = this.elementValue('size');
+      }
+
+      if (this.elementValue('backgroundColor')) {
+        style.backgroundColor = this.elementValue('backgroundColor');
+      }
+
+      if (this.elementValue('color')) {
+        style.color = this.elementValue('color');
+      }
+
+      if (this.elementValue('borderRadius')) {
+        style.borderRadius = this.elementValue('borderRadius');
+      }
+
+      return style;
+    }
+  }
+});
+// CONCATENATED MODULE: ./src/components/LsIcon.vue?vue&type=script&lang=js&
+ /* harmony default export */ var components_LsIconvue_type_script_lang_js_ = (LsIconvue_type_script_lang_js_); 
+// EXTERNAL MODULE: ./node_modules/vue-loader/lib/runtime/componentNormalizer.js
+var componentNormalizer = __webpack_require__("2877");
+
+// CONCATENATED MODULE: ./src/components/LsIcon.vue
+
+
+
+
+
+/* normalize component */
+
+var component = Object(componentNormalizer["a" /* default */])(
+  components_LsIconvue_type_script_lang_js_,
+  render,
+  staticRenderFns,
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* harmony default export */ var LsIcon = __webpack_exports__["default"] = (component.exports);
 
 /***/ }),
 
@@ -3798,6 +4102,88 @@ module.exports = bind ? function (fn) {
 
 /***/ }),
 
+/***/ "e637":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+// ESM COMPAT FLAG
+__webpack_require__.r(__webpack_exports__);
+
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"75050d79-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--1-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/LsMenu.vue?vue&type=template&id=e501d7d6&
+var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return (_vm.itemsValue.length)?_c('menu',{staticClass:"lsq-element",attrs:{"id":_vm.id}},_vm._l((_vm.itemsValue),function(item,index){return _c('li',{key:index},[_vm._t("item",function(){return [_c('a',{attrs:{"href":item.link}},[_vm._v(_vm._s(item.label))])]},{"item":item})],2)}),0):_vm._e()}
+var staticRenderFns = []
+
+
+// CONCATENATED MODULE: ./src/components/LsMenu.vue?vue&type=template&id=e501d7d6&
+
+// EXTERNAL MODULE: ./src/mixins/element.js
+var mixins_element = __webpack_require__("2472");
+
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--13-0!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--1-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/LsMenu.vue?vue&type=script&lang=js&
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ var LsMenuvue_type_script_lang_js_ = ({
+  name: 'LsMenu',
+  mixins: [mixins_element["a" /* default */]],
+  props: {
+    id: {
+      type: String,
+      required: true
+    },
+    items: {
+      type: Array,
+      "default": function _default() {
+        return [];
+      },
+      input: {
+        type: 'menu',
+        label: 'Items'
+      }
+    }
+  },
+  computed: {
+    itemsValue: function itemsValue() {
+      return this.elementValue('items');
+    }
+  }
+});
+// CONCATENATED MODULE: ./src/components/LsMenu.vue?vue&type=script&lang=js&
+ /* harmony default export */ var components_LsMenuvue_type_script_lang_js_ = (LsMenuvue_type_script_lang_js_); 
+// EXTERNAL MODULE: ./node_modules/vue-loader/lib/runtime/componentNormalizer.js
+var componentNormalizer = __webpack_require__("2877");
+
+// CONCATENATED MODULE: ./src/components/LsMenu.vue
+
+
+
+
+
+/* normalize component */
+
+var component = Object(componentNormalizer["a" /* default */])(
+  components_LsMenuvue_type_script_lang_js_,
+  render,
+  staticRenderFns,
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* harmony default export */ var LsMenu = __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
 /***/ "e893":
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -4065,9 +4451,12 @@ module.exports = NATIVE_SYMBOL
 /***/ (function(module, exports, __webpack_require__) {
 
 var map = {
+	"./LsAccordion.vue": "7bd6",
 	"./LsButton.vue": "c6da",
 	"./LsHeading.vue": "631e",
-	"./LsImage.vue": "199d",
+	"./LsIcon.vue": "b767",
+	"./LsMedia.vue": "9ee3",
+	"./LsMenu.vue": "e637",
 	"./LsText.vue": "7c3f"
 };
 
