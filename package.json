@@ -9,7 +9,7 @@
   },
   "main": "dist/theme-elements.common.js",
   "browser": "dist/theme-elements.umd.js",
-  "files": ["dist"],
+  "files": ["dist", "src"],
   "devDependencies": {
     "@vue/cli-plugin-babel": "~4.5.0",
     "@vue/cli-plugin-eslint": "~4.5.0",
